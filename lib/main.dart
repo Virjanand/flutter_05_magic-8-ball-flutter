@@ -16,6 +16,12 @@ class EightBall extends StatefulWidget {
 class _EightBallState extends State<EightBall> {
   int answer = 1;
 
+  void changeAnswer() {
+    setState(() {
+      answer = Random().nextInt(5) + 1;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -29,11 +35,7 @@ class _EightBallState extends State<EightBall> {
           ),
         ),
         body: FlatButton(
-          onPressed: () {
-            setState(() {
-              answer = Random().nextInt(5) + 1;
-            });
-          },
+          onPressed: changeAnswer,
           child: Center(
             child: Image.asset('images/ball$answer.png'),
           ),
