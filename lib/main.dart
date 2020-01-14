@@ -6,11 +6,12 @@ void main() {
   );
 }
 
-class EightBall extends StatelessWidget {
-  const EightBall({
-    Key key,
-  }) : super(key: key);
+class EightBall extends StatefulWidget {
+  @override
+  _EightBallState createState() => _EightBallState();
+}
 
+class _EightBallState extends State<EightBall> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
